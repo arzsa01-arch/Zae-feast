@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<title>ZAEFEAST</title>
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="header-bg"></div>
+
+        <div class="header-content">
+
+            <div class="brand">
+
+                <img
+                    src="images/logo.jpg"
+                    alt="Logo"
+                    class="logo">
+
+                <div>
+
+                    <h1>ZAEFEAST</h1>
+
+                    <p>
+                        Makanan Lezat • Harga Bersahabat
+                    </p>
+
+                </div>
+
+            </div>
+
+            <a
+                href="cart.html"
+                class="cart-btn">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span>
+                    Keranjang
+                </span>
+
+                <span
+                    id="cartCount"
+                    class="cart-count">
+                    0
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- SEARCH -->
+
+    <section class="search-section">
+
+        <div class="search-box">
+
+            <i
+                class="fa-solid fa-magnifying-glass">
+            </i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Cari menu..."
+                onkeyup="searchMenu()">
+
+        </div>
+
+    </section>
+
+    <!-- KATEGORI -->
+
+    <section class="category-section">
+
+        <button
+            class="category-btn active"
+            onclick="filterMenu('all',this)">
+
+            Semua
+
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterMenu('makanan',this)">
+
+            Makanan
+
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterMenu('minuman',this)">
+
+            Minuman
+
+        </button>
+
+    </section>
+
+    <!-- MENU -->
+
+    <section class="menu-container">
+
+        <!-- AYAM GEPREK -->
+
+        <div
+            class="menu-card"
+            data-category="makanan">
+
+            <span class="badge">
+                BEST SELLER
+            </span>
+
+            <img
+                src="images/Ayam-geprek-nasi.jpg"
+                alt="Ayam Geprek">
+
+            <div class="card-content">
+
+                <h3>Ayam Geprek</h3>
+
+                <p>
+                    Nasi-Ayam crispy dengan sambal pedas.
+                </p>
+
+                <div class="price">
+                    Rp 13.000
+                </div>
+
+                <button
+                    onclick="addCart('Ayam Geprek',20000)">
+
+                    Tambah Keranjang
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- AYAM GEPREK -->
+
+     <div
+            class="menu-card"
+            data-category="makanan">
+
+            <span class="badge">
+                BEST SELLER
+            </span>
+
+            <img
+                src="images/ayam-geprek.jpg"
+                alt="Ayam Geprek">
+
+            <div class="card-content">
+
+                <h3>Ayam Geprek</h3>
+
+                <p>
+                    Ayam crispy dengan sambal pedas.
+                </p>
+
+                <div class="price">
+                    Rp 10.000
+                </div>
+
+                <button
+                    onclick="addCart('Ayam Geprek',20000)">
+
+                    Tambah Keranjang
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- MIE AYAM -->
+
+        <div
+            class="menu-card"
+            data-category="makanan">
+
+            <img
+                src="images/mie-ayam.jpg"
+                alt="Mie Ayam">
+
+            <div class="card-content">
+
+                <h3>Mie Ayam</h3>
+
+                <p>
+                    Mie ayam gurih dengan topping melimpah.
+                </p>
+
+                <div class="price">
+                    Rp 10.000
+                </div>
+
+                <button
+                    onclick="addCart('Mie Ayam',18000)">
+
+                    Tambah Keranjang
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- BAKSO -->
+
+        <div
+            class="menu-card"
+            data-category="makanan">
+
+            <span class="badge promo">
+                PROMO
+            </span>
+
+            <img
+                src="images/bakso.jpg"
+                alt="Bakso">
+
+            <div class="card-content">
+
+                <h3>Bakso Tennes</h3>
+
+                <p>
+                    Bakso sapi dengan Kuah Spesial.
+                </p>
+
+                <div class="price">
+                    Rp 10.000
+                </div>
+
+                <button
+                    onclick="addCart('Bakso Spesial',22000)">
+
+                    Tambah Keranjang
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- NASI -->
+
+        <div
+            class="menu-card"
+            data-category="makanan">
+
+            <img
+                src="images/nasi.jpg"
+                alt="Nasi">
+
+            <div class="card-content">
+
+                <h3>Nasi</h3>
+
+                <p>
+                    Nasi tambah
+                </p>
+
+                <div class="price">
+                    Rp 3.000
+                </div>
+
+                <button
+                    onclick="addCart('Nasi',18000)">
+
+                    Tambah Keranjang
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ES TEH -->
+
+        <div
+            class="menu-card"
+            data-category="minuman">
+
+            <img
+                src="images/es-teh.jpg"
+                alt="Es Teh">
+
+            <div class="card-content">
+
+                <h3>Es Teh Manis</h3>
+
+                <p>
+                    Teh segar dingin pilihan.
+                </p>
+
+                <div class="price">
+                    Rp 5.000
+                </div>
+
+                <button
+                    onclick="addCart('Es Teh Manis',5000)">
+
+                    Tambah Keranjang
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- JUS ALPUKAT -->
+
+        <div
+            class="menu-card"
+            data-category="minuman">
+
+            <img
+                src="images/jus-alpukat.jpg"
+                alt="Jus Alpukat">
+
+            <div class="card-content">
+
+                <h3>Jus Alpukat</h3>
+
+                <p>
+                    Jus alpukat segar dan creamy.
+                </p>
+
+                <div class="price">
+                    Rp 5.000
+                </div>
+
+                <button
+                    onclick="addCart('Jus Alpukat',12000)">
+
+                    Tambah Keranjang
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- JUS JERUK -->
+
+        <div
+            class="menu-card"
+            data-category="minuman">
+
+            <img
+                src="images/jus-jeruk.jpg"
+                alt="Jus Jeruk">
+
+            <div class="card-content">
+
+                <h3>Jus Jeruk</h3>
+
+                <p>
+                    Jus Jeruk Segar.
+                </p>
+
+                <div class="price">
+                    Rp 5.000
+                </div>
+
+                <button
+                    onclick="addCart('Jus Alpukat',12000)">
+
+                    Tambah Keranjang
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Jus Buah Naga -->
+
+        <div
+            class="menu-card"
+            data-category="minuman">
+
+            <img
+                src="images/jus-naga.jpg"
+                alt="Jus naga">
+
+            <div class="card-content">
+
+                <h3>Jus Buah Naga</h3>
+
+                <p>
+                    Jus Buah Naga.
+                </p>
+
+                <div class="price">
+                    Rp 5.000
+                </div>
+
+                <button
+                    onclick="addCart('Jus Alpukat',12000)">
+
+                    Tambah Keranjang
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Jus Nanas -->
+
+        <div
+            class="menu-card"
+            data-category="minuman">
+
+            <img
+                src="images/jus-nanas.jpg"
+                alt="Jus nanas">
+
+            <div class="card-content">
+
+                <h3>Jus Nanas</h3>
+
+                <p>
+                    Jus Nanas.
+                </p>
+
+                <div class="price">
+                    Rp 5.000
+                </div>
+
+                <button
+                    onclick="addCart('Jus Alpukat',12000)">
+
+                    Tambah Keranjang
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Jus Mangga -->
+
+        <div
+            class="menu-card"
+            data-category="minuman">
+
+            <img
+                src="images/jus-mangga.jpg"
+                alt="Jus mangga">
+
+            <div class="card-content">
+
+                <h3>Jus Mangga</h3>
+
+                <p>
+                    Jus Mangga.
+                </p>
+
+                <div class="price">
+                    Rp 5.000
+                </div>
+
+                <button
+                    onclick="addCart('Jus Alpukat',12000)">
+
+                    Tambah Keranjang
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 ZAEFEAST
+        </p>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
